@@ -1,4 +1,4 @@
 BizCards
 ========
 
-Products and Markets Fall 2014, Biz Cards project
+Products and Markets Fall 2014, Bizcards project

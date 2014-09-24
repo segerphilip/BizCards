@@ -6,3 +6,23 @@ html {
   background-size: cover;
   font-family: 'Oswald', sans-serif;
 }
+#logo{
+  background-color: #380087;
+  height: 200px;
+  color: white;
+}
+#preview-ie {
+  FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)
+}  
+#preview-image {
+  float: right;
+}
+#preview-div{
+  max-width: 500px; 
+}
+label{
+  margin-top: 5px;
+}
+#forward-button{
+  margin-top: 5px;
+}

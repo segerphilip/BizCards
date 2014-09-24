@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TESTINGBusiness CardsTESTING</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.2.min.css">
+    <link rel="stylesheet" href="bootstrap-theme-3.2.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <script src="bootstrap-3.2.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">LaserCards</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="index.html">Custom</a>
+              </li>
+              <li>
+                <a href="template-design.html">Template</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h3>Fill Out Your Information</h3>
+      <form id="upload-form" runat="server">
+        <label for="name">Name:</label><br />
+        <input type="text" size="50" name="name" id="name"></input><br />
+        <label for="compname">Company Name:</label><br />
+        <input type="text" size="50" name="compname" id="compname"></input><br />
+        <label for="jobtitle">Title:</label><br />
+        <input type="text" size="50" name="jobtitle" id="jobtitle"></input><br />
+        <label for="address">Address 1:</label><br />
+        <input type="text" size="50" name="address" id="address"></input><br />
+        <label for="address2">Address 2:</label><br />
+        <input type="text" size="50" name="address2" id="address2"></input><br />
+      </form>
+      <div id="preview-div">
+      </div>
+      <h3>Material</h3>
+      <form id="material-form">
+        <input type="radio" name="material" value="cardstock">cardstock</input><br />
+        <input type="radio" name="material" value="bamboo">bamboo</input><br />
+        <input type="radio" name="material" value="metal">metal</input><br />
+        <input type="radio" name="material" value="wood">wood</input>
+      </form>
+      <button id="forward-button" class="btn btn-lg btn-primary">Go!</button>
+    </div>
+  </body>
+</html>

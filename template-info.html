@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>TESTINGBusiness CardsTESTING</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.2.min.css">
+    <link rel="stylesheet" href="bootstrap-theme-3.2.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <script src="bootstrap-3.2.min.js"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">LaserCards</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="upload.html">Custom Upload</a>
+              </li>
+              <li>
+                <a href="template-design.html">Template</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <form id="upload-form" runat="server">
+        <h3>Fill Out Your Information:</h3>
+          <div id="live-preview" style="width:350px;height:200px;background:brown;color:black;float:right;">Preview goes here</div>
+          <label for="name">Name:</label><br />
+          <input type="text" size="50" name="name" id="name"></input><br />
+          <label for="compname">Company Name:</label><br />
+          <input type="text" size="50" name="compname" id="compname"></input><br />
+          <label for="jobtitle">Title:</label><br />
+          <input type="text" size="50" name="jobtitle" id="jobtitle"></input><br />
+          <label for="address">Address 1:</label><br />
+          <input type="text" size="50" name="address" id="address"></input><br />
+          <label for="address2">Address 2:</label><br />
+          <input type="text" size="50" name="address2" id="address2"></input><br />
+          <label for="phone">Phone:</label><br />
+          <input type="text" size="50" name="phone" id="phone"></input><br />
+          <label for="email">Email:</label><br />
+          <input type="text" size="50" name="email" id="email"></input><br />
+          <label for="website">Website:</label><br />
+          <input type="text" size="50" name="website" id="website"></input><br />
+      </form>
+      <button id="forward-button" class="btn btn-lg btn-primary">Next</button>
+    </div>
+  </body>
+</html>

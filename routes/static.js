@@ -8,5 +8,5 @@ exports.about = function(req, res){
 };
 
 exports.help = function(req, res){
-  res.send("respond with a resource");
+  res.render('help', { title: 'Design Guidelines and Other Questions' });
 };

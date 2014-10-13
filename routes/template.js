@@ -3,6 +3,6 @@
  * GET users listing.
  */
 
-exports.list = function(req, res){
-  res.send("respond with a resource");
+exports.render = function(req, res){
+  res.render('template-design', { title: 'Select A Template Design - Lasercards' });
 };

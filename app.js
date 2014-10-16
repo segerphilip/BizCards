@@ -10,6 +10,7 @@ var uploadpages = require('./routes/upload');
 var templatepages = require('./routes/template');
 var http = require('http');
 var path = require('path');
+var multiparty = require('multiparty');
 
 var app = express();
 
@@ -32,8 +33,10 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
+app.post('/upload', uploadpages.save);
 app.get('/template-design', templatepages.render);
 app.get('/help', staticpages.help);
+// app.get('/material-select');
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

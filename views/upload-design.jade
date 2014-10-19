@@ -19,9 +19,21 @@ block head
         readURL(this);
       });
     });
+  // [if gte IE 8] <!
+    <script type="text/javascript">.
+      $(document).ready(function(){
+        function readURL(imgFile){    
+          var newPreview = document.getElementById("preview-ie");
+          newPreview.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgFile.value;
+          newPreview.style.width = "160px";
+          newPreview.style.height = "120px";
+        };
+      });
+    </script>
+  // <![endif]
 block content
   h3 Upload Your Image:
-  form#upload-form(action='/upload', method='post', enctype='multipart/form-data')
+  form#upload-form(action='/material-select', method='post', enctype='multipart/form-data')
     input#image-upload(type='file',name='image')
     #preview-div
       img#preview-image(src='')

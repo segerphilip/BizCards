@@ -22,6 +22,11 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(express.cookieParser());
+app.use(express.session({
+  secret: 'I hope this is a good secret',
+  cookie: {}
+}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,11 +38,10 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
-app.post('/upload', uploadpages.save);
-app.get('/template-design', templatepages.render);
+app.post('/material-select', uploadpages.save);
+app.get('/template-design', templatepages.templateSelect);
 app.get('/help', staticpages.help);
-// app.get('/material-select');
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Express HTTP server listening on port ' + app.get('port'));
 });

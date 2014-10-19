@@ -1,5 +1,21 @@
 extends layout
-
+block head
+  script(type='text/javascript').
+    $(document).ready(function(){
+      $('img').attr('src', '#{filepath}');
+    })
 block content
-  h1= title
-  p Welcome to #{title}
+  h3 Select Your Material: 
+  #template-list
+    #design-1.template-design(style='background: blue;')
+      a(href='#')
+        img.template-image(src='//:0', alt='Bamboo')
+    #design-1.template-design(style='background: green;')
+      a(href='#')
+        img.template-image(src='//:0', alt='Cardstock')
+    #design-1.template-design(style='background: red;')
+      a(href='#')
+        img.template-image(src='//:0', alt='Teak')
+    #design-1.template-design(style='background: brown;')
+      a(href='#')
+        img.template-image(src='//:0', alt='Cardboard')

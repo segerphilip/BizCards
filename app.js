@@ -38,6 +38,8 @@ app.get('/template-design', templatepages.render);
 app.get('/help', staticpages.help);
 // app.get('/material-select');
 
+console.log("Testing");
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

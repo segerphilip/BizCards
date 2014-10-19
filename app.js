@@ -8,6 +8,7 @@ var routes = require('./routes');
 var staticpages = require('./routes/static');
 var uploadpages = require('./routes/upload');
 var templatepages = require('./routes/template');
+var order = require('./routes/order');
 var http = require('http');
 var path = require('path');
 var multiparty = require('multiparty');
@@ -40,6 +41,7 @@ app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
 app.post('/material-select', uploadpages.save);
 app.get('/template-design', templatepages.templateSelect);
+app.post('/addtocart', order.addtocart);
 app.get('/help', staticpages.help);
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -41,7 +41,7 @@ app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
 app.post('/material-select', uploadpages.save);
 app.get('/template-design', templatepages.templateSelect);
-app.post('/addtocart', order.addtocart);
+app.post('/information', order.getinfo);
 app.get('/help', staticpages.help);
 
 http.createServer(app).listen(app.get('port'), function(){

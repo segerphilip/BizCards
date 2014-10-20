@@ -2,4 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #{title}. Here you can pay for your cards.
+  form(action='https://www.paypal.com/cgi/webscr', method='post')
+    //identify biz to collect payments
+    input(type='hidden', name='business',value='team05.ebang@olin.edu')
+    input(type='hidden', name='cmd', value ='_xclick')
+    input(type='hidden',name='item_value',value='Card Stock Biz Cards!')
+    input(type='hidden',name='amount',value='.01')
+    input(type='hidden',name='currency_code',value='USD')
+
+    //display button
+    input(type='image',name='submit',border='0',src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif",alt="PayPal - The safer, easier way to pay online")
+    img(alt='',border='0',width='1',height='1',src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif") 

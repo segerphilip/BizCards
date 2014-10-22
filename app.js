@@ -44,6 +44,7 @@ app.post('/material-select', uploadpages.save);
 app.get('/template-design', templatepages.templateSelect);
 app.post('/addtocart', order.addtocart);
 app.get('/help', staticpages.help);
+app.get('/examples',staticpages.examples);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express HTTP server listening on port ' + app.get('port'));

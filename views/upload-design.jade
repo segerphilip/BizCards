@@ -4,6 +4,9 @@ block head
     label{
       margin-right: 5px;
     }
+    #name-field{
+      margin-bottom: 5px;
+    }
   script(type='text/javascript').
     $(document).ready(function(){
       function readURL(input) {
@@ -38,16 +41,12 @@ block head
 block content
   h3 Upload Your Image:
   form#upload-form(action='/material-select', method='post', enctype='multipart/form-data')
-    input#image-upload(type='file',name='image')
+    | Full Name: 
+    input#name-field(type='text', name='name', size='17' required)
+    input#image-upload(type='file',name='image' required)
     #preview-div
       img#preview-image(src='')
       #preview-ie
-    label(for='quantity') Order Quantity: 
-    select#quantity(name='quantity')
-      option(value='10') 10
-      option(value='20') 20
-      option(value='30') 30
-      option(value='40') 40
     ul
       li
         a(href='/help#guidelines', target='_blank') Design Guidelines

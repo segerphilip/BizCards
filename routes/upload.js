@@ -6,7 +6,6 @@ exports.render = function(req, res){
 
 exports.save = function(req, res){
   // create a form to begin parsing
-  console.log(req);
   var form = new multiparty.Form({autoFiles: true, uploadDir: __dirname + '/../public/uploads'});
 
   // parse the form
@@ -16,11 +15,9 @@ exports.save = function(req, res){
       res.redirect('/upload-design');
     }
     else{
-      console.log(fields.quantity[0]);
-      console.log(files.image[0].path);
       req.session.imagePath = files.image[0].path;
-      req.session.quantity = parseInt(fields.quantity[0]);
-      console.log('Upload completed!');
+      req.session.imageOwner = fields.name[0];
+      console.log('Upload of', files.image[0].originalFilename, 'for', fields.name[0], 'completed!');
       res.render('material-select', { title: 'Select A Material - Lasercards', filepath: req.session.imagePath.slice(36) });
     }
   });

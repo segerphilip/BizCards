@@ -20,7 +20,6 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
-app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.cookieParser());
@@ -30,6 +29,7 @@ app.use(express.session({
 }));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.logger());
 
 // development only
 if ('development' == app.get('env')) {
@@ -41,7 +41,7 @@ app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
 app.post('/material-select', uploadpages.save);
 app.get('/template-design', templatepages.templateSelect);
-app.post('/information', order.getinfo);
+app.post('/confirm', order.confirm);
 app.get('/help', staticpages.help);
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -1,5 +1,5 @@
-exports.getinfo = function(req, res){
+exports.confirm = function(req, res){
   req.session.material = req.body.material;
-  // console.log(req.session.material, req.session.quantity, req.session.imagePath);
-  res.redirect('/');
+  console.log(req.session);
+  res.render('order-confirm');
 };

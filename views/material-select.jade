@@ -10,19 +10,50 @@ block head
     input {
       background:url('#{filepath}') no-repeat;
     }
+    .design-preview{
+      width: 400px;
+      height: 229px;
+      color: black;
+    }
+    #cherry-overlay{
+      position: absolute;
+      width: 400px;
+      height: 229px;
+      background: url('/images/BirdseyeCherryWood.jpg') no-repeat;
+      left: 0px;
+      top: 0px;
+      opacity: 0.5;
+    }
+    #walnut-overlay{
+      position: absolute;
+      width: 400px;
+      height: 229px;
+      background: url('/images/Walnut.jpg') no-repeat;
+      left: 0px;
+      top: 0px;
+      opacity: 0.8;
+    }
+    #cherry-div{
+      height: 229px;
+      width: 400px;
+      position: relative;
+      float: left;
+    }
+    #walnut-div{
+      margin-left: 10px;
+      height: 229px;
+      width: 400px;
+      position: relative;
+      float: left;
+    }
+    
 block content
   h3 Select Your Material: 
-  form#material-form(action='/information', method='post')
+  form#material-form(action='/confirm', method='post')
     input#material(type='hidden', name='material', value='invalid')
-    div
-      input.design-preview(type='submit', src='//:0', value='Bamboo', alt='Bamboo')
-    div
-      input.design-preview(type='submit', src='//:0', value='Veneer', alt='Veneer')
-    div
-      input.design-preview(type='submit', src='//:0', value='Cardstock', alt='Cardstock')
-    div
-      input.design-preview(type='submit', src='//:0', value='Acrylic', alt='Acrylic')
-    div
+    div#cherry-div
+      canvas#cherry-overlay
       input.design-preview(type='submit', src='//:0', value='Cherry', alt='Cherry')
-    div
-      input.design-preview(type='submit', src='//:0', value='Oak', alt='Oak')
+    div#walnut-div
+      canvas#walnut-overlay
+      input.design-preview(type='submit', src='//:0', value='Walnut', alt='Walnut')

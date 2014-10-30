@@ -5,15 +5,34 @@ block head
       $('.design-preview').click(function(){
         $('#material').val($(this).val());
       })
+        //This is an IE fix because pointer-events does not work in IE
+        $(document).on('mousedown', 'canvas', function (e) {
+            console.log('hi');
+            $(this).hide();
+            var BottomElement = document.elementFromPoint(e.clientX, e.clientY);
+            console.log(BottomElement);
+            $(this).show();
+            $(BottomElement).trigger('click'); //Manually fire the event for desired underlying element
+            return false;
+
+        });
     })
+    
   style(type='text/css').
-    input {
-      background:url('#{filepath}') no-repeat;
-    }
     .design-preview{
       width: 400px;
       height: 229px;
       color: black;
+      background:url('#{filepath}') no-repeat center center;
+      -webkit-filter: grayscale(100%);  
+      -webkit-filter: grayscale(1);  
+      filter: grayscale(100%);  
+      filter: url('../img/grey.svg#grayscale');  
+      filter: gray;  
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
     }
     #cherry-overlay{
       position: absolute;
@@ -23,6 +42,8 @@ block head
       left: 0px;
       top: 0px;
       opacity: 0.5;
+      z-index: 9;
+      // pointer-events: none;
     }
     #walnut-overlay{
       position: absolute;
@@ -31,7 +52,9 @@ block head
       background: url('/images/Walnut.jpg') no-repeat;
       left: 0px;
       top: 0px;
-      opacity: 0.8;
+      opacity: 0.5;
+      z-index: 9;
+      // pointer-events: none;
     }
     #cherry-div{
       height: 229px;

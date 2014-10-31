@@ -17,6 +17,7 @@ exports.save = function(req, res){
     else{
       req.session.imagePath = files.image[0].path;
       req.session.imageOwner = fields.name[0];
+      req.session.ownerEmail = fields.email[0];
       console.log('Upload of', files.image[0].originalFilename, 'for', fields.name[0], 'completed!');
       res.render('material-select', { title: 'Select A Material - Lasercards', filepath: req.session.imagePath.slice(36) });
     }

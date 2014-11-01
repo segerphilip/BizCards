@@ -4,18 +4,18 @@ block head
     $(document).ready(function(){
       $('.design-preview').click(function(){
         $('#material').val($(this).val());
-      })
-        //This is an IE fix because pointer-events does not work in IE
-        $(document).on('mousedown', 'canvas', function (e) {
-            console.log('hi');
-            $(this).hide();
-            var BottomElement = document.elementFromPoint(e.clientX, e.clientY);
-            console.log(BottomElement);
-            $(this).show();
-            $(BottomElement).trigger('click'); //Manually fire the event for desired underlying element
-            return false;
+      });
+      //This is an IE fix because pointer-events does not work in IE
+      $(document).on('mousedown', 'canvas', function (e) {
+          console.log('hi');
+          $(this).hide();
+          var BottomElement = document.elementFromPoint(e.clientX, e.clientY);
+          console.log(BottomElement);
+          $(this).show();
+          $(BottomElement).trigger('click'); //Manually fire the event for desired underlying element
+          return false;
 
-        });
+      });
     })
     
   style(type='text/css').
@@ -69,6 +69,9 @@ block head
       position: relative;
       float: left;
     }
+    #helpdiv{
+      float: left;
+    }
     
 block content
   h3 Select Your Material: 
@@ -80,3 +83,6 @@ block content
     div#walnut-div
       canvas#walnut-overlay
       input.design-preview(type='submit', src='//:0', value='Walnut', alt='Walnut')
+    div#helpdiv
+      input#helpcheck(type='checkbox', name='appearance', value ='no') 
+      | My card design looks as expected (leave unchecked and we will contact you at the above email to help you)

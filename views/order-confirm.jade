@@ -15,12 +15,11 @@ block content
   br
   | Material: #{material}
   br
+  | I require help with my design: #{help}
   br
   form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
       input(type='hidden', name='cmd', value='_s-xclick')
       input(type='hidden', name='hosted_button_id', value='MEN438Z29J866')
-      input(type='checkbox', name='appearance', value ='yes') 
-      | My card design looks as expected (leave unchecked and we will contact you at the above email to help you)
       table
         tr
           td
@@ -34,5 +33,5 @@ block content
               option(value='40 Cards') 40 Cards $0.04 USD
       input(type='hidden', name='currency_code', value='USD')
       br
-      input(type='image', src='https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif', border='0', name='submit', alt='PayPal - The safer, easier way to pay online!')
+      input#buybutton(type='image', src='https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif', border='0', name='submit', alt='PayPal - The safer, easier way to pay online!')
       img(alt='', border='0', src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif', width='1', height='1')

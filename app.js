@@ -12,6 +12,8 @@ var order = require('./routes/order');
 var http = require('http');
 var path = require('path');
 var multiparty = require('multiparty');
+var mongoose = require('mongoose');
+var Order = require('./public/schemas/order');
 
 var app = express();
 

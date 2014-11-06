@@ -16,8 +16,11 @@ exports.save = function(req, res){
     }
     else{
       req.session.image = files.image[0].path;
-      req.session.name = fields.name[0];
-      req.session.email = fields.email[0];
+      // Replaces /, \, |, {, }, +, <, >, [, and ] in the name and email fields.
+      // Also limits names and emails to 100 characters (sanity check!)
+      // also strips drop() and remove() strings
+      req.session.name = fields.name[0].replace(/([\/\\\|\{\}\+\<\>\[\]]|drop\(\)|remove\(\))/ig,'').substring(0,100);
+      req.session.email = fields.email[0].replace(/([\/\\\|\{\}\+\<\>\[\]]|drop\(\)|remove\(\))/ig,'').substring(0,100);
       console.log('Upload of', files.image[0].originalFilename, 'for', fields.name[0], 'completed!');
       res.render('material-select', { title: 'Select A Material - Lasercards', filepath: req.session.image.slice(36) });
     }

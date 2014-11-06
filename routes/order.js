@@ -17,5 +17,7 @@ exports.confirm = function(req, res){
       console.log('Order saved successfully.')
     }
   })
-  res.render('order-confirm', {title: 'Confirm Your Order', material: req.session.material, name: req.session.name, image: req.session.image, email: req.session.email, help: req.session.help});
+  var buttonmap = {"Walnut": "GE7FHCVVBACEE", "Cherry": "MEN438Z29J866", "Birch": "4SAPHAYVLUY8S", "Cardstock": "YBKPVF5GSJK6S"}
+  var buttoncode = buttonmap[req.session.material];
+  res.render('order-confirm', {title: 'Confirm Your Order', material: req.session.material, name: req.session.name, image: req.session.image, email: req.session.email, help: req.session.help, button: buttoncode});
 };

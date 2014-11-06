@@ -42,7 +42,7 @@ app.get('/', routes.index);
 app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
 app.post('/material-select', uploadpages.save);
-app.get('/template-design', templatepages.templateSelect);
+app.get('/template-design', routes.index);
 app.post('/confirm', order.confirm);
 app.get('/help', staticpages.help);
 

@@ -34,36 +34,30 @@ block head
       -o-background-size: contain;
       background-size: contain;
     }
-    #cherry-overlay{
+    .overlay{
       position: absolute;
       width: 400px;
       height: 229px;
-      background: url('/images/cherry.jpg') no-repeat;
       left: 0px;
       top: 0px;
       opacity: 0.5;
       z-index: 9;
-      // pointer-events: none;
+    }
+    #cherry-overlay{
+      background: url('/images/cherry.jpg') no-repeat;
     }
     #walnut-overlay{
-      position: absolute;
-      width: 400px;
-      height: 229px;
       background: url('/images/walnut.jpg') no-repeat;
-      left: 0px;
-      top: 0px;
-      opacity: 0.5;
-      z-index: 9;
-      // pointer-events: none;
     }
-    #cherry-div{
-      height: 229px;
-      width: 400px;
-      position: relative;
-      float: left;
+    #birch-overlay{
+      background: url('/images/birch.jpg') no-repeat;
     }
-    #walnut-div{
-      margin-left: 10px;
+    #cardstock-overlay{
+      background: white;
+    }
+    .material-div{
+      margin-right: 10px;
+      margin-bottom: 10px;
       height: 229px;
       width: 400px;
       position: relative;
@@ -77,12 +71,18 @@ block content
   h3 Select Your Material: 
   form#material-form(action='/confirm', method='post')
     input#material(type='hidden', name='material', value='invalid')
-    div#cherry-div
-      canvas#cherry-overlay
+    div.material-div
+      canvas#cherry-overlay.overlay
       input.design-preview(type='submit', src='//:0', value='Cherry', alt='Cherry')
-    div#walnut-div
-      canvas#walnut-overlay
+    div.material-div
+      canvas#walnut-overlay.overlay
       input.design-preview(type='submit', src='//:0', value='Walnut', alt='Walnut')
+    div.material-div
+      canvas#birch-overlay.overlay
+      input.design-preview(type='submit', src='//:0', value='Birch', alt='Birch')
+    div.material-div
+      canvas#cardstock-overlay.overlay
+      input.design-preview(type='submit', src='//:0', value='Cardstock', alt='Cardstock')
     div#helpdiv
       input#helpcheck(type='checkbox', name='appearance', value ='no') 
       | My card design looks as expected (leave unchecked and we will contact you at the above email to help you)

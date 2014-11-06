@@ -22,7 +22,8 @@ exports.save = function(req, res){
       req.session.name = fields.name[0].replace(/([\/\\\|\{\}\+\<\>\[\]]|drop\(\)|remove\(\))/ig,'').substring(0,100);
       req.session.email = fields.email[0].replace(/([\/\\\|\{\}\+\<\>\[\]]|drop\(\)|remove\(\))/ig,'').substring(0,100);
       console.log('Upload of', files.image[0].originalFilename, 'for', fields.name[0], 'completed!');
-      res.render('material-select', { title: 'Select A Material - Lasercards', filepath: req.session.image.slice(36) });
+      console.log(req.session.image.slice(20));
+      res.render('material-select', { title: 'Select A Material - Lasercards', filepath: req.session.image.slice(20) });
     }
   });
 };

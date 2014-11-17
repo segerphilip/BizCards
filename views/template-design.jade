@@ -1,4 +1,79 @@
 extends layout
+block head
+  script(type='text/javascript').
+    $(document).ready(function(){
+      $('.design-preview').click(function(){
+        $('#design').val($(this).val());
+      });
+      //This is an IE fix because pointer-events does not work in IE
+      $(document).on('mousedown', 'canvas', function (e) {
+          console.log('hi');
+          $(this).hide();
+          var BottomElement = document.elementFromPoint(e.clientX, e.clientY);
+          console.log(BottomElement);
+          $(this).show();
+          $(BottomElement).trigger('click'); //Manually fire the event for desired underlying element
+          return false;
 
+      });
+    })
+    
+  style(type='text/css').
+    .design-preview{
+      width: 400px;
+      height: 229px;
+      color: black;
+      background:url('#{filepath}') no-repeat center center;
+      -webkit-filter: grayscale(100%);  
+      -webkit-filter: grayscale(1);  
+      filter: grayscale(100%);  
+      filter: url('../img/grey.svg#grayscale');  
+      filter: gray;  
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+    .overlay{
+      position: absolute;
+      width: 400px;
+      height: 229px;
+      left: 0px;
+      top: 0px;
+      z-index: 9;
+      border: black 1px solid;
+    }
+    #overlay-one{
+      background: url('/images/cherrycard.jpg') 0px 0px/400px 229px no-repeat;
+    }
+    #overlay-two{
+      background: url('/images/walnutcard.jpg') 0px 0px/400px 229px no-repeat;
+    }
+    #overlay-three{
+      background: url('/images/birchcard.jpg') 0px 0px/400px 229px no-repeat;
+    }
+    .design-div{
+      margin-right: 10px;
+      margin-bottom: 10px;
+      height: 229px;
+      width: 400px;
+      position: relative;
+      float: left;
+    }
+    #main-content{
+      width: 100%;
+    }
+    
 block content
-  h1= title
+  h3 Select Your Design: 
+  form#design-form(action='/fill-template', method='post')
+    input#design(type='hidden', name='design', value='invalid')
+    div.design-div
+      canvas#overlay-one.overlay
+      input.design-preview(type='submit', src='//:0', value='/images/cherrycard.jpg', alt='Design 1')
+    div.design-div
+      canvas#overlay-two.overlay
+      input.design-preview(type='submit', src='//:0', value='/images/walnutcard.jpg', alt='Design 2')
+    div.design-div
+      canvas#overlay-three.overlay
+      input.design-preview(type='submit', src='//:0', value='/images/birchcard.jpg', alt='Design 3')

@@ -42,7 +42,8 @@ app.get('/', routes.index);
 app.get('/about', staticpages.about);
 app.get('/upload-design', uploadpages.render);
 app.post('/material-select', uploadpages.save);
-app.get('/template-design', routes.index);
+app.get('/template-design', templatepages.select);
+app.post('/fill-template', templatepages.fill);
 app.post('/confirm', order.confirm);
 app.get('/help', staticpages.help);
 

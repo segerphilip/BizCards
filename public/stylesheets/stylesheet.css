@@ -10,3 +10,7 @@ html {
 #main-content{
   max-width: 870px;
 }
+
+.container {
+    color: #777;
+}

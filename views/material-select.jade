@@ -63,8 +63,8 @@ block head
       position: relative;
       float: left;
     }
-    #helpdiv{
-      float: left;
+    #main-content{
+      width: 100%;
     }
     
 block content
@@ -83,6 +83,3 @@ block content
     div.material-div
       canvas#cardstock-overlay.overlay
       input.design-preview(type='submit', src='//:0', value='Cardstock', alt='Cardstock')
-    div#helpdiv
-      input#helpcheck(type='checkbox', name='appearance', value ='no') 
-      | My card design looks as expected (leave unchecked and we will contact you at the above email to help you)

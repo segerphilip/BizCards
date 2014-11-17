@@ -5,8 +5,9 @@ var orderSchema = mongoose.Schema({
   cardImage: String,
   name: String,
   email: String,
-  helpNeeded: String,
-  material: String
+  material: String,
+  template: Boolean,
+  templateInfo: Object
 });
 
 var Order = mongoose.model('Order', orderSchema);

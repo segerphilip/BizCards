@@ -24,10 +24,10 @@ block content
             | Quantity: 
           td
             select(name='os0')
-              option(value='10 Cards') 10 Cards $0.01 USD
-              option(value='20 Cards') 20 Cards $0.02 USD
-              option(value='30 Cards') 30 Cards $0.03 USD
-              option(value='40 Cards') 40 Cards $0.04 USD
+              option(value='10 Cards') 10 Cards $#{baseprice[0]} USD
+              option(value='20 Cards') 20 Cards $#{baseprice[1]} USD
+              option(value='30 Cards') 30 Cards $#{baseprice[2]} USD
+              option(value='40 Cards') 40 Cards $#{baseprice[3]} USD
       input(type='hidden', name='currency_code', value='USD')
       br
       input#buybutton(type='image', src='https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif', border='0', name='submit', alt='PayPal - The safer, easier way to pay online!')

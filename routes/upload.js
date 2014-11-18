@@ -5,7 +5,8 @@ exports.render = function(req, res){
 };
 
 exports.save = function(req, res){
-  if(req.headers['referer'] == 'http://localhost:3000/upload-design') {
+  referURL = req.headers['referer'].substring(req.headers['referer'].lastIndexOf('/'));
+  if(referURL == '/upload-design') {
     // create a form to begin parsing
     var form = new multiparty.Form({autoFiles: true, uploadDir: __dirname + '/../public/uploads'});
 
@@ -30,7 +31,7 @@ exports.save = function(req, res){
       }
     });
   }
-  else if(req.headers['referer'] == 'http://localhost:3000/fill-template') {
+  else if(referURL == '/fill-template') {
     req.session.name = req.body.name;
     req.session.email = req.body.email;
     req.session.templateInfo = {

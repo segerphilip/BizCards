@@ -1,8 +1,33 @@
 extends layout
-
+block head
+  style(type='text/css').
+    img{
+      width: 128px;
+      height: 128px;
+      margin-right: 5px;
+    }
+    td{
+      width: 132px;
+      text-align: center;
+    }
 block content
   h3 The LaserCards Team
+  img(src='/images/elena.jpg')
+  img(src='/images/griffin.jpg')
+  img(src='/images/mika.jpg')
+  img(src='/images/philip.jpg')
+  img(src='/images/riley.jpg')
+  img(src='/images/tom.jpg')
+  table
+    tr
+      
+      td Elena
+      td Griffin
+      td Mika
+      td Philip
+      td Riley
+      td Tom
+  br
   p
-    // picturs go heer
     | Hello! We're a team of students studying at Olin College of Engineering. For our fall 2014 semester, we are taking Products and Markets,
     | a class centered around going from zero to sucessful business in only a semester. 

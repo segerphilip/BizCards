@@ -45,6 +45,6 @@ exports.save = function(req, res){
     'other2': req.body.other2,
     'other3': req.body.other3
     };
-    res.render('material-select', { title: 'Select A Material - LaserCards');
+    res.render('material-select', { title: 'Select A Material - LaserCards'});
   };
 };

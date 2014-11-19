@@ -66,6 +66,9 @@ block head
     #main-content{
       width: 100%;
     }
+    table {
+      border-style: none;
+    }
     
 block content
   h3 Select Your Material: 
@@ -83,3 +86,13 @@ block content
     div.material-div
       canvas#cardstock-overlay.overlay
       input.design-preview(type='submit', src='//:0', value='Cardstock', alt='Cardstock')
+    table
+      tr
+        td Birch:
+        td $0.70 per card ($14 for 20)
+      tr
+        td Cherry/Walnut:
+        td $0.85 per card ($17 for 20)
+      tr
+        td Cardstock:
+        td $0.20 per card ($05 for 20)

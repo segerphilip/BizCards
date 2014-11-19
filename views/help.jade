@@ -1,5 +1,9 @@
 extends layout
-
+block head
+style(type='text/css').
+  table{
+    border-style: none;
+  }
 block content
   h3
     | If you ever have any questions, feel free to email us at lasercards@outlook.com!
@@ -16,3 +20,14 @@ block content
     li
       | We also accept other files such as TIFs, PDFs, Microsoft Office files, and Adobe files such as InDesign and Photoshop.
     li(style='list-style-type:none') (In these cases, we will email you in order to determine how the final design will look on a business card)
+  h3 Prices
+  table
+    tr
+      td Birch:
+      td $0.70 per card ($14 for 20)
+    tr
+      td Cherry/Walnut:
+      td $0.85 per card ($17 for 20)
+    tr
+      td Cardstock:
+      td $0.20 per card ($05 for 20)
